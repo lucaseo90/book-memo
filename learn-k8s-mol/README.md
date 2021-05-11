@@ -1,4 +1,4 @@
-# Learn K8s(Kubernetes) MOL(in a Month of Lunches)
+# Learn K8s(Kubernetes) MoL(in a Month of Lunches)
 
 ## 01
 
@@ -127,6 +127,87 @@ $ kubectl logs ${POD_NAME}
 ```
 $ kubectl delete pod ${POD_NAME}
 $ kubectl delete pods --all
+```
+
+</p>
+</details>
+
+## 03
+<details><summary>CLICK ME</summary>
+<p>
+
+
+Kubernetes는 Pod에 가상 환경의 IP 주소를 할당한다.
+* Pod는 해당 IP 주소를 통해 Pod 간의 통신을 수행
+* Pod의 IP는 Kubernetes API를 통해 검색
+
+Kubernetes는 IP 주소에 서비스 이름을 매핑하기 위해 DNS 서버를 내장한다.
+* 서비스에는 자체 IP 주소가 있으며, 사용자가 해당 주소로 요청하면, Kubernetes는 Pod의 실제 IP 주소로 라우팅
+* 서비스와 Pod간의 링크는 Deployment와 Pod간의 링크와 같이 레이블 선택기로 설정
+
+Kubernetes의 기본 서비스 타입은 ClusterIP로 구성된다.
+* 모든 노드의 Pod가 액세스 할 수 있는 클러스터 전체 IP 주소를 생성
+* IP 주소는 클러스터 내에서만 작동하며, Pod간 통신에 활용
+
+LoadBalancer 타입의 서비스는 트래픽을 수신한 노드와 다른 노드에서 실행 중일 수 있는 Pod로 트래픽을 가져오도록 한다.
+  ```yaml
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: numbers-web
+  spec:
+    ports:
+      - port: 8080      
+        targetPort: 80  
+    selector:
+      app: numbers-web
+    type: LoadBalancer  
+  ```
+  * 포트 8080을 이용해 수신 대기하고, 포트 80의 Pod로 트래픽을 전달하는 LoadBalancer 서비스
+  * 외에 로드밸런서에 의존하지 않는 NodePort 서비스도 존재
+ 
+Kubernetes에서 외부로 트래픽 전달을 위해서는 ExternalName 서비스를 사용할 수 있다.
+* 애플리케이션 Pod에서 로컬 이름을 사용 가능
+* Kubernetes의 DNS 서버각 Pod 조회 요청시 해당 로컬 이름을 정규화된 외부 이름으로 확인
+* DNS의 표준 기능인 CNAME(Canonical NAMEs)을 사용하여 구현
+* 다른 옵션으로는 headless 서비스가 존재
+
+
+</p>
+</details>
+
+### practice
+<details><summary>CLICK ME</summary>
+<p>
+
+#### 예제 Service (`sleep2-service.yaml`)
+```yaml
+apiVersion: v1  
+kind: Service
+
+metadata:
+  name: sleep-2 
+
+spec:
+  selector:
+    app: sleep-2
+  ports:
+    - port: 80
+```
+
+#### Service 생성
+```shell
+$ kubectl apply -f sleep2-service.yaml
+```
+
+#### Service 조회
+```shell
+$ kubectl get svc ${SERVICE_NAME}
+```
+
+#### Service
+```shell
+$ kubectl delete svc ${SERVICE_NAME}
 ```
 
 </p>
