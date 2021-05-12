@@ -212,3 +212,17 @@ $ kubectl delete svc ${SERVICE_NAME}
 
 </p>
 </details>
+
+## 04
+<details><summary>CLICK ME</summary>
+<p>
+
+
+Kubernetes는 ConfigMap 및 Secrets로 설정을 지원한다.
+* ConfigMap은 Pod에 로드할 수 있는 일부 데이터를 저장하는 리소스
+* ConfigMap이 Pod에 적용되는 시점은 애플리케이션에 다를 수 있지만, 주로 Pod가 교체하면서 적용
+* Secrets는 디스크가 아닌 메모리에 저장되며, Kubernetes 내에서 권한제어 및 암호화
+* Secrets에 권한이 있는 사람은 평문인 값을 확인 가능
+
+</p>
+</details>
