@@ -226,3 +226,44 @@ Kubernetes는 ConfigMap 및 Secrets로 설정을 지원한다.
 
 </p>
 </details>
+
+## 05
+
+### memo
+<details><summary>CLICK ME</summary>
+<p>
+
+
+Kubernetes에는 Pod 지원을 위한 파일시스템이 존재한다. 
+* 기본적으로 Pod에 대한 데이터는 영속적이지 않으며, 만약 Pod에 영속적인 데이터 저장을 원한다면 볼륨 생성이 필요
+* 클러스터 환경에서 데이터 액세스에 대한 관리는 컴퓨팅에 대한 자원 관리보다 어려운 부분이지만 Kubernetes는 이를 위해 다양한 옵션을 지원
+
+#### Node의 디렉토리에 매핑되는 Volume 사용
+* HostPath를 사용하여 데이터를 Node에 물리적으로 저장
+* Node간의 데이터를 공유하기에는 적합하지 않은 구성
+* Pod에 보안상의 취약점이 있는 경우 Node까지 액세스 가능
+  * 액세스 가능한 경로에서 루트 경로로 접근하는 것을 막기 위해 하위 경로에만 접근 제한하는 설정이 가능
+
+> 보편적인 Kubernetes 클러스터 환경에서 사용하기엔 적합하지 않은 설정 
+
+#### PersistentVolume을 사용 (정적 프로비저닝)
+* PersistentVolume을 사용하여 클러스터에 스토리지를 추상화
+* Pod는 PersistentVolume에 액세스하기 위해 PersistentVolumeClaim (PVC)을 사용해서 요청
+  * PVC에는 액세스 모드, 스토리지 크기, 스토리지 클래스를 정의
+* Kubernetes는 Claim의 요구사항에 일치하는 기존 PV를 찾으려고하며, 항목이 없는 경우 PVC를 PV에 바인딩
+  * 1:1 링크로 인해 PV가 바인딩되면, 다른 PVC에서는 사용 불가
+* Pod는 바인딩되지 않은 PVC를 참조하려하는 경우, PVC가 바인딩될때까지 Pending 상태로 유지
+
+#### PersistentVolume을 사용 (동적 프로비저닝)
+* PVC를 작성하면, 이를 지원하는 PV가 클러스터의 요청시 작성
+* PV를 만들지 않고 PVC를 클러스터에 배포할 수 있는데, 이 경우 Kubernetes가 구동되는 플랫폼에 따라 내부 동작이 다름
+  * 예) Docker Desktop의 경우 동적 프로비저닝으로 생성된 PV에 대해 기본 스토리지 클래스의 HostPath 볼륨을 사용
+
+
+
+### 추가 Reference
+* [볼륨](https://kubernetes.io/ko/docs/concepts/storage/volumes/)
+
+
+</p>
+</details>
