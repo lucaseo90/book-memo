@@ -267,3 +267,21 @@ Kubernetes에는 Pod 지원을 위한 파일시스템이 존재한다.
 
 </p>
 </details>
+
+## 06
+
+### memo
+<details><summary>CLICK ME</summary>
+<p>
+
+
+Kubernetes에서 애플리케이션 확장을 위해서는 Pod를 여러개 실행하면 된다. 
+* 컴퓨팅 계층에서 네트워크 및 스토리지를 추상화하기 때문에, 동일한 앱의 복제본인 Pod를 여러개 실행하고 추상화된 계층에 연결
+* 복제본인 Pod를 호출함으로써 다중 노드 클러스터에서는 여러 노드에 분산
+* `ReplicaSet`을 통해 Pod의 복제본 값을 설정, 보통 `Deplyment` 컨트롤러의 `replicas` 값을 설정하는 방법으로 활용
+* Kubernetes 클러스터 내에 들어오는 트래픽 처리를 위해 `LoadBalancer` 서비스를 사용 (엄밀히 따지면 Reverse Proxy)
+
+
+</p>
+</details>
+
