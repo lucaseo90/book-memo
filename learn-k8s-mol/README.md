@@ -304,3 +304,23 @@ Kubernetes는 하나의 Pod 내에 여러 Container를 생성할 수 있다.
 </p>
 </details>
 
+## 08
+
+### memo
+<details><summary>CLICK ME</summary>
+<p>
+
+
+Kubernetes에서 데이터 집약적인 애플리케이션을 위해서는 StatefulSets, Jobs 및 CronJobs와 같은 컨트롤을 활용할 수 있다. 
+* StatefulSets: 클러스터링 구성된 애플리케이션을 다루기 위해 활용
+  * 고가용성을 위해 기본 인스턴스와 보조 인스턴스로 구성된 경우, 보조 인스턴스를 시작하기 위한 논리적인 순서를 설계 가능 (초기화 패턴 활용)
+  * 인스턴스를 0 ~ n까지 순서대로 생성하며, 축소해야하는 경우 역순으로 제거
+  * `volumeClamTemplates`를 활용해 스토리지 계층을 추상화하여 Pod가 교체 될 때 Pod와 PVC 사이의 링크를 유지
+* Jobs & CronJobs: 데이터 백업 및 조정을 위해 활용
+  * `restartPolicy`를 활용해 실패에 대한 응답으로 작업의 동작을 제어
+  * 동일한 다수의 Pod를 병렬로 실행하는 워크로드를 수행
+  * 데이터베이스 백업 프로세스를 정기적으로 수행하는 작업
+
+
+</p>
+</details>
