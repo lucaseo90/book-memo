@@ -385,3 +385,16 @@ Helm chart 파일 구조
 
 </p>
 </details>
+
+## 11
+
+### memo
+<details><summary>CLICK ME</summary>
+<p>
+
+
+Kubernetes를 이용해 Plaform-as-a-Service (PaaS)로 활용하면, CI/CD 서비스를 호스팅하는 모든 테스트 환경에 단일 클러스터를 실행하여 컨테이너 실행에 대한 복잡한 세부 정보를 처리할 수 있다.
+
+  
+</p>
+</details>
