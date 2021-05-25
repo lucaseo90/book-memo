@@ -398,3 +398,33 @@ Kubernetes를 이용해 Plaform-as-a-Service (PaaS)로 활용하면, CI/CD 서�
   
 </p>
 </details>
+
+## 12
+
+### memo
+<details><summary>CLICK ME</summary>
+<p>
+
+
+Kubernetes는 Pod 내의 애플리케이션의 상태가 정상인지 확인하기 위해 컨테이너 Probe라는 메커니즘을 제공한다.
+  * Probe는 Pod 스펙에 정의되어, 주기적으로 애플리케이션의 일부를 테스트하고, 앱이 정상인지를 알려주는 표시기를 반환
+  ```yaml
+  spec:
+  containers:
+    - image: kiamol/ch03-numbers-api
+      readinessProbe:                 # 1
+        httpGet:
+          path: /healthz              # 2
+          port: 80
+        periodSeconds: 5              # 3
+  ```
+  1. Probe는 컨테이너 수준에서 실행
+  2. 애플리케이션의 /healthz 상태 URL을 HTTP GET를 통해 호출
+  3. 주기적으로 호출하도록 설정 가능
+  
+Kubernetes는 이러한 매커니즘을 통해 애플리케이션의 비정상 상태를 감지하고, 비정상 상태일때 조치를 추가할 수 있다.
+  
+  
+</p>
+</details>
+
