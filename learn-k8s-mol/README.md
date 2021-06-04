@@ -458,3 +458,27 @@ Elasticsearch는 index 컬렉션 항목에 document로 저장하는 오픈소스
 </p>
 </details>
 
+## 14
+
+### memo
+<details><summary>CLICK ME</summary>
+<p>
+
+  
+중앙집중식 로깅의 연장선으로 Kubernetes에 구동되는 애플리케이션 구성요소에 대한 메트릭을 수집하고 시각화하는 중앙집중식 시스템을 구성해야 한다.
+* Kubernetes에서는 Prrometheus라는 CNCF 프로젝트를 사용하여 공유 모니터링 시스템을 구성 가능
+* Kubernetes API 서버에 대한 권한이 있는 Pod에서 Prometheus를 실행한 다음, Prmetheus각 API를 호출하여 모니터링해야 하는 모든 대상을 조회
+* API를 통해 새로운 애플리케이션이 배포되더라도 자동으로 검색되어 모니터링
+
+Prometheus는 애플리케이션이 자신의 상태를 반환하는 엔드포인트 API를 가지고 있는 경우, API에 포함되는 모든 메트릭을 저장한다.
+* Prometheus는 모니터링 대상 애플리케이션의 정보를 식별하기 위한 key-value pair 라벨과 함께 메트릭을 저장
+* 라벨을 사용하여 메트릭을 선택하거나 집계하고, Prometheus에 저장학기 전에 메트릭을 필터링 또는 수정하는 레이블 재지정이라는 개념을 제공
+* 레이블 재지정을 통해 원하지 않는 데이터를 제외하거나, 원하는 형태로 변경
+
+애플리케이션은 Prometheus로 수집하기 위한 메트릭을 스스로 제공해야 한다. 
+
+Grafana를 사용해 Prometheus로 수집하는 메트릭에 대한 대시보드 구성을 할 수 있다.
+
+  
+</p>
+</details>  
