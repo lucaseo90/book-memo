@@ -482,3 +482,23 @@ Grafana를 사용해 Prometheus로 수집하는 메트릭에 대한 대시보드
   
 </p>
 </details>  
+
+
+## 15
+
+### memo
+<details><summary>CLICK ME</summary>
+<p>
+
+
+Kubernetes에서는 Ingress를 사용하여 요청을 애플리케이션에 라우팅하도록할 수 있다.
+* 라우팅 규칙을 표준 리소스로 정의하고 역방향 프록시를 배포하여 트래픽을 수신하고 규칙에 따라 라우팅
+* Nginx와 Traefik을 사용하여 수행 가능
+
+### Nginx를 사용하는 방법 
+
+### Traefik을 사용하는 방법
+
+
+</p>
+</details>
