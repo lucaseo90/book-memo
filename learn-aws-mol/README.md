@@ -40,3 +40,10 @@
   4. WordPress 파일을 Apache 루트 디렉토리로 복사
   5. WordPress 사이트 접속
 
+## 04
+
+* RDS (Amazon Relational Database Service)
+  * EC2 기반 애플리케이션에 쉽게 통합 할 수 있는 데이터베이스 솔루션
+
+### 실습
+- [ ] RDS로 MySQL 데이터베이스에 저장한 데이터를 마이그레이션 
