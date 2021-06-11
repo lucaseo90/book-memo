@@ -20,7 +20,14 @@
 * `Hello World` 수준의 HTML 파일 추가하여 확인
 
 #### 추가로 해봐야할 것
-- [ ] SSH로 접속
+- [x] SSH로 접속
+  1. 인스턴스 목록에서 접속하고자 하는 인스턴스 ID 클릭
+  2. (우측 상단) 연결 클릭
+  3. SSH 클라이언트 탭 클릭
+  ```shell
+  $ ssh -i keyname.pem ${USER_NAME}@${PUBLIC DNS}
+  ```
+  * 여기서 `.pem` 파일은 인스턴스 생성시 설정했던 key 파일 
 
 ## 03
 
