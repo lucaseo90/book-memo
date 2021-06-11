@@ -47,3 +47,15 @@
 
 ### 실습
 - [ ] RDS로 MySQL 데이터베이스에 저장한 데이터를 마이그레이션 
+
+## 05
+
+* Domain Name System (DNS)
+* Route 53
+  * Domain Registration
+  * DNS Management
+  * Traffic Management
+  * Availability Monitoring
+
+### 실습
+- [ ] Route 53을 이용한 DNS 등록
