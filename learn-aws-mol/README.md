@@ -66,3 +66,15 @@
 
 ### 실습
 - [ ] Route 53을 이용한 DNS 등록
+
+## 06
+
+* Simple Storage Service (S3)
+  * Versioning 
+  * Logging
+  * Tags
+  * User Management
+  * Permission Management
+
+### 실습
+- [ ] WordPress에 포스트를 생성하는데, S3에 저장된 동영상을 URL 링크로 연결
