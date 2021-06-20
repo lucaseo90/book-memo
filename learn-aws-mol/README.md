@@ -139,3 +139,24 @@
 
 ### 실습
 - [ ] AWS CLI를 설치 및 활용
+
+## 13
+
+* AWS에서의 High Availability (HA)를 위한 구성요소
+  1. Virtual Private Cloud (VPC)
+  2. Private and Public subnet
+  3. Security
+  4. EC2 AMI
+  5. S3 Bucket
+  6. EBS Volume
+  7. Auto Scaler
+  8. Load Balancer
+
+> AWS 서비스의 이름 (EC2, ECS, EFS, EMR 등)에서의 E의 의미는 email의 electronic이 아닌 elastic을 의미한다. 
+
+* 클라우드 컴퓨팅이 제공해야하는 특성 - 미국 NIST에서 정의한 특성
+  * On-demand self-service
+  * Broad network access
+  * Resource pooling
+  * Rapid elasticity
+  * Measured service
