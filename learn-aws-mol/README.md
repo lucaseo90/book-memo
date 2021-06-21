@@ -160,3 +160,15 @@
   * Resource pooling
   * Rapid elasticity
   * Measured service
+
+## 14
+
+* AWS Virtual Private Cloud (VPC)
+  * high configurable routing
+  * access-control
+  * networking tool
+
+> VPC에서 EC2 인스턴스를 시작하면, VPC의 보안 및 연결 설정이 자동으로 상속된다.
+
+### 실습
+- [ ] 2개 이상의 서브넷이 있는 VPC를 만들고, 동일한 EC2 인스턴스를 배포한 뒤 둘 다 사용가능한지 확인
