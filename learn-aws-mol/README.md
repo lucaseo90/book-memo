@@ -146,7 +146,7 @@
   1. Virtual Private Cloud (VPC)
   2. Private and Public subnet
   3. Security
-  4. EC2 AMI
+  4. EC2 AMI (Amazon Machine Image)
   5. S3 Bucket
   6. EBS Volume
   7. Auto Scaler
@@ -179,3 +179,26 @@
 
 ### 실습
 - [ ] AMI를 여러 인스턴스 애플리케이션 로드밸런서에 배포하고, 인스턴스가 실패할때 얼마나 빨리 로드밸런서가 복구되는지 확인
+
+## 16
+
+* Auto Scaling
+  * Auto: 사람의 개입 없이 일어나는 것
+  * Scaling: 필요에 따라 용량(capacity)가 확장 또는 축소
+
+* AWS에서 Auto Scaling 설정
+  1. `Launch Configuration`에서 Auto Scaler가 새 인스턴스가 필요할 때 시작할 AMI를 선택
+  2. 인스턴스의 유형을 선택 (예: `t2.micro`)
+  3. 설정에 이름을 지정
+  4. 저장소 및 보안 그룹 단계 수행
+  5. `Create Auto Scaling Group` 페이지에서 Auto Scaling 그룹 생성
+  6. 로드밸런서가 사용하는 대상 그룹을 지정
+  7. 인스턴스를 확장 및 축소하기 위한 정책 설정
+
+### 실습
+- [ ] Auto Scaling 구성을 하여, 인스턴스를 강제로 종료시킬 때 현상을 확인
+- [ ] WordPress의 데이터베이스를 RDS로 변경하고, WordPress 설치가 데이터베이스와 연결되는 새로운 AMI를 생성
+  * MySQL은 각 인스턴스에 종속적이기 때문에 새로운 인스턴스가 실행되었을때 데이터 일관성을 위해 필요
+
+
+
