@@ -200,5 +200,11 @@
 - [ ] WordPress의 데이터베이스를 RDS로 변경하고, WordPress 설치가 데이터베이스와 연결되는 새로운 AMI를 생성
   * MySQL은 각 인스턴스에 종속적이기 때문에 새로운 인스턴스가 실행되었을때 데이터 일관성을 위해 필요
 
+## 17
+
+* Content-Delivery Network (CDN) - *edge caching*
+* CloudFront
+* Transport Layer Security (TLS)
+* Time-to-Live (TTL)
 
 
